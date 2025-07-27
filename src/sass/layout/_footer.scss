@@ -1,0 +1,91 @@
+@use '../abstracts/abstracts' as abs;
+
+.footer {
+    margin-top: 120px;
+    background-color: abs.$negro;
+
+    .container {
+        padding: 48px 32px;
+    }
+
+    &__logo {
+        svg {
+            height: 40px;
+        }
+    }
+
+    &__description {
+        margin-top: 38px;
+        font-size: 16px;
+        line-height: 26px;
+        color: white;
+    }
+
+    &__socials {
+        margin-top: 38px;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+
+        a:hover {
+            opacity: .8;
+        }
+    }
+
+    &.footer__location {
+        margin-top: 0;
+        background-color: abs.$dorado;
+
+        .footer__logo,
+        .footer__socials {
+            svg {
+                path {
+                    fill: black;
+                }
+            }
+        }
+
+        .footer__description {
+            color: abs.$negro;
+        }
+    }
+
+    @include abs.breakpoint(tablet) {
+        .container {
+            display: flex;
+            padding: 56px 40px;
+        }
+
+        &__logo {
+            width: 25.4%;
+        }
+
+        &__description {
+            width: 281px;
+            margin-top: 0;
+        }
+
+        &__socials {
+            flex: 1;
+            align-items: start;
+            justify-content: end;
+            margin-top: 0;
+        }
+    }
+
+    @include abs.breakpoint(desktop) {
+
+        &__logo {
+            svg {
+                height: 58px;
+            }
+        }
+
+        &__description {
+            width: 430px;
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+    }
+}

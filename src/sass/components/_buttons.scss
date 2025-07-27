@@ -1,0 +1,9 @@
+@use '../abstracts/abstracts' as abs;
+
+.button {
+    @include abs.button;
+}
+
+.button2 {
+    @include abs.button(i);
+}

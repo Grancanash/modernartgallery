@@ -1,0 +1,13 @@
+@use 'sass:color';
+@use '../abstracts/abstracts' as abs;
+
+.header {
+    height: 120px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+}

@@ -1,0 +1,72 @@
+@use 'sass:color';
+@use 'variables' as var;
+
+@mixin breakpoint($bp) {
+  @if $bp == tablet {
+    @media (min-width: var.$bp-tablet) {
+      @content;
+    }
+  } @else if $bp == tablethorizontal {
+    @media (min-width: var.$bp-tablet-horizontal) {
+      @content;
+    }
+  } @else if $bp == desktop {
+    @media (min-width: var.$bp-desktop) {
+      @content;
+    }
+  } @else if $bp == desktopxl {
+    @media (min-width: var.$bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+// BOTONES
+
+@mixin button($pos_arrow: d) {
+  display: inline-block;
+  color: white;
+  background-color: var.$negro;
+  padding: 24px 32px;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 3.64px;
+  font-family: var.$font_bigshoulders;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  transition: all .2s;
+
+  &::after {
+    content: '';
+    width: 56px;
+    height: 72px;
+    background-color: var.$dorado;
+    background-image: url('../../img/button_arrow.svg');
+    filter: drop-shadow(offset-x offset-y blur-radius color);
+    background-repeat: no-repeat;
+    background-position: center 24px;
+    position: absolute;
+    top: 0;
+    right: -56px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: var.$dorado;
+
+    &::after {
+      background-color: var.$negro;
+    }
+  }
+
+  @if $pos_arrow == i {
+    margin-left: 56px;
+
+    &::after {
+      left: -56px;
+      transform: rotate(180deg);
+    }
+  }
+}

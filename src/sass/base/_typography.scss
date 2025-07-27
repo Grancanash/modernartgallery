@@ -1,0 +1,24 @@
+@use '../abstracts/abstracts' as abs;
+
+h1, h2, h3 {
+    font-family: abs.$font_bigshoulders;
+    font-weight: 900;
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 55px;
+}
+
+h2 {
+    font-size: 50px;
+    line-height: 45px;
+}
+
+p {
+    font-family: abs.$font_outfit;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+    color: abs.$gris-oscuro;
+}
